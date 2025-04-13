@@ -105,7 +105,7 @@ func (s *UserServer) DeleteUser(ctx context.Context, req *proto.DeleteUserReques
 }
 
 func StartServer(port string, db *gorm.DB) error {
-	listener, err := net.Listen("tcp", ":"+port)
+	listener, err := net.Listen("tcp", "0.0.0.0:"+port)
 	if err != nil {
 		return err
 	}
